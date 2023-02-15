@@ -95,10 +95,10 @@ def parse_nbline(line: str, nb_uri=None) -> Optional[dict]:
             
         if "=" in assignment_line:
             name, value_str = assignment_line.split("=", 1)
-            name = name.strip()
+            name = name.split(':')[0].strip()
             value_str = value_str.strip()
         else:
-            name = assignment_line.strip()
+            name = assignment_line.split(':')[0].strip()
             value_str = None
 
         try:
